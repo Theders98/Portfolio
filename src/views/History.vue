@@ -1,7 +1,7 @@
 <template>
     <div>
         
-<div class="min-h-screen bg-gray-100">
+<div class="bg-gray-200 min-h-screen pt-40 pb-40">
             
     <div class="min-h-screen flex justify-center">
         <div class="w-2/3 mx-auto">

@@ -1,35 +1,47 @@
 <template>
-  <div class="home">
+  <div class="home bg-gray-200">
     	<!--Container-->
-	<div class="container shadow-lg mx-auto bg-white mt-56 md:mt-18">
+	<div class="container mx-auto pt-56 md:pt-18 ">
 
-	<div class="bg-white font-sans leading-normal tracking-normal ">
+	<div class="font-sans leading-normal tracking-normal ">
 
-	<div class="carousel-inner relative overflow-hidden w-full mt-16">
+	<div class="carousel-inner relative overflow-hidden w-full pt-16">
 	  <!--Slide 1-->
 		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
 		<div class="carousel-item absolute opacity-0" style="height:50vh;">
 
 			<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">Slide 1</div>
 		</div>
-		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label>
+		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		 hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label>
 		
 		<!--Slide 2-->
 		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
 		<div class="carousel-item absolute opacity-0" style="height:50vh;">
 			<div class="block h-full w-full bg-orange-500 text-white text-5xl text-center">Slide 2</div>
 		</div>
-		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label> 
+		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label> 
 		
 		<!--Slide 3-->
 		<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
 		<div class="carousel-item absolute opacity-0" style="height:50vh;">
 			<div class="block h-full w-full bg-green-500 text-white text-5xl text-center">Slide 3</div>
 		</div>
-		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label>
+		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
+		hover:text-white rounded-full
+		 hover:bg-blue-700 leading-tight text-center z-5 inset-y-0 right-0 my-auto">›</label>
 
 		<!-- Add additional indicators for each slide-->
 		<ol class="carousel-indicators">
@@ -51,7 +63,7 @@
 
 <div class="flex justify-center" v-on:click="scrollToTop()"><img class="w-16 mt-32 opacity-25 transition duration-200 ease-in transform hover:opacity-100 hover:-translate-y-1 hover:scale-110 cursor-pointer" src="@/assets/flecha.svg" alt=""></div>
 
-<div id="aboutMe" class="mt-32 mb-64">
+<div id="aboutMe" class="mt-32 pb-64">
 <p class="text-5xl text-center mb-8 font-semibold" id="aboutMeTitle">Sobre Mí</p> 
 
 <div class="ml-64 mr-64 flex " id="aboutMeText"><div class=" mr-32"><img class="mt-6" src="assets/logo.png" alt=""></div>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="flex mt-32 justify-around" id="dashboards">
+  <div class="bg-gray-200">
+    <div class="flex mt-32 justify-around " id="dashboards">
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
