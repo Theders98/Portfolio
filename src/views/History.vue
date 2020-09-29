@@ -49,8 +49,8 @@
     <div class="w-1/5  flex justify-center">
         <div class="relative flex h-full w-1 bg-green-300 items-center justify-center">
             <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-5 bg-white font-thin">
-                <div>20</div>
-                <div>сентября</div>
+                 <div>20</div>
+                <div>September</div>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
         <div class="relative flex h-full w-1 bg-green-300 items-center justify-center">
             <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-10 bg-white font-thin">
                 <div>20</div>
-                <div>сентября</div>
+                <div>September</div>
             </div>
         </div>
     </div>

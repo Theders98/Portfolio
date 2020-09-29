@@ -153,7 +153,94 @@
         </div>
       </div>
     </div>
+    <div>
+
     
+    <div class="border-b-2 border-gray-400 ml-64 mr-64 flex justify-center text-gray-800">
+<p>Otras tecnologias usadas</p>
+    </div>
+
+
+      
+    </div>
+    <div class="flex flex-wrap pt-20 pb-10">
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/adobe-photoshop.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/adobe-illustrator.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/amazons.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/xampp.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/babel.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/composer.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/docker.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/Jasper.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/eclipse.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/git.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/HeidiSQL.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/json.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/Jsoup.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/jwt.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/netbeans.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/newRelic.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/node.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/npm.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/php.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/phpmyadmin.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/putty.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/SonyVegas.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/ubuntu.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/xml.png" alt/>
+  </div>
+  <div class="w-16 mx-auto cursor-pointer button text-white font-bold transition duration-100 ease-in transform hover:-translate-y-1 hover:scale-110">
+    <img src="@/assets/TechUsed/webpack.png" alt/>
+  </div>
+  
+  </div>
   </div>
 </template>
 
