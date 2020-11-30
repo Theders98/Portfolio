@@ -21,9 +21,9 @@
 
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
-				<li class="mr-3">
+				<li class="mr-3" v-for="(option, index) in enLang" v-bind:key="index">
                     <router-link to="/" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">
-					Inicio
+					
                     </router-link>
 				</li>
 				<li class="mr-3">
@@ -46,19 +46,23 @@
 					  <span class="mr-1">Language</span>
 					  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
 					</button>
-					<ul class="dropdown-menu absolute hidden text-gray-700 pt-1 ">
-					  <li class="">
-						  <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
+					<ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+					  <li class="" @click="handleChange('en')" value="en"> 
+						  <a  class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
 							  <p class="mt-2">English</p>
 							  <img class="w-8 m-1" src="@/assets/bandera.svg" alt=""></a></li>
-					  <li class="">
-						  <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
+					  <li class="" @click="handleChange('fr')" value="fr">
+						  <a  class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
 							<p class="mt-2">French</p> 
 							  <img class="w-8 m-1" src="@/assets/francia.svg" alt=""></a></li>
-					  <li class="">
-						  <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
+					  <li class="" @click="handleChange('es')" value="es">
+
+						  <a  class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap flex justify-between" href="#">
 							<p class="mt-2">Spanish</p> 
-							  <img class="w-8 m-1 " src="@/assets/espana.svg" alt=""></a></li>
+							  <img class="w-8 m-1 " src="@/assets/espana.svg" alt="">
+							  
+							  </a></li>
+						  
 					</ul>
 				  </div>
 			</ul>
@@ -68,18 +72,30 @@
 </template>
 
     <style scope>
-        .dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: block;
 }
-
-	</style>
+</style>
 	<script>
-	export default {
-		methods:{
-			changeHighlightedLink(){
-				console.log();
+export default {
+	data: function () { 
+		const lang = localStorage.getItem('lang') || 'en';
+		return {
 
-			}
-		}
-	}
-	</script>
+			lang: lang
+
+		};
+	 },
+  methods: {
+    handleChange(event) {
+	  localStorage.setItem("lang", event);
+	  window.location.reload();
+    },
+  },
+  computed: {
+	  enLang(){
+		  return this.$store.state.header;
+	  }
+  }
+};
+</script>
