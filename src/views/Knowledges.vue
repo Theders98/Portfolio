@@ -5,7 +5,7 @@
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-gray-400 border-b-2 border-gray-500 rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="font-bold uppercase text-gray-600">Used programming tecnologies (%)</h5>
+            <h5 class="font-bold uppercase text-gray-600">{{this.data.dashboards.programmingDashboard}}</h5>
           </div>
           <div class="p-5 flex align-middle">
           <ChartPrograming v-if="loaded" :data="ProgramingTechnologies" :styles="styles"/>
@@ -17,7 +17,7 @@
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-gray-400 border-b-2 border-gray-500 rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="font-bold uppercase text-gray-600">Used style tecnologies (%)</h5>
+            <h5 class="font-bold uppercase text-gray-600">{{this.data.dashboards.styleDashboard}}</h5>
           </div>
           <div class="p-5 flex align-middle">
            <ChartStyle v-if="loaded" :data="StyleTechnologies" :styles="styles"/>
@@ -25,139 +25,38 @@
         </div>
       </div>
     </div>
+
     <div class="flex mt-32 justify-around" id="tecnologies">
-      <div class="flex-col items-center justify-center">
+      <div v-for="(button, index) in this.data.buttons" v-bind:key="index" class="flex-col items-center justify-center">
         <div class="w-32 mx-auto cursor-pointer button text-white font-bold">
-          <img
-            class="w-32"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tomcat-logo.svg/1280px-Tomcat-logo.svg.png"
+          <img class="w-32"
+            v-bind:src="button.img"
             alt
           />
         </div>
         <div class="object p-4 mt-4 shadow-xl">
           <div class="max-w-sm rounded">
             <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">Tomcat</div>
-              <p
-                class="text-gray-700 text-base"
-              >En el tiempo que he estado trabajando con Java Spring he usado tomcat y me he manejado con diferentes versiones.</p>
+              <div class="font-bold text-xl mb-2">{{button.title}}</div>
+              <p class="text-gray-700 text-base" >{{button.text}}</p>
             </div>
             <div class="px-6 py-4">
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >Tomcat 9</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >Tomcat 8.5.54</span>
-            </div>
+
+              <span v-for="(tag, index) in button.tags"
+               v-bind:key="index"
+                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{tag}}</span>
+   
           </div>
         </div>
+      </div>
       </div>
 
-      <div class="flex-col items-center justify-center">
-        <div class="w-32 mx-auto cursor-pointer button text-white font-bold">
-          <img
-            class="w-32"
-            src="https://d1.awsstatic.com/logos/partners/MariaDB_Logo.d8a208f0a889a8f0f0551b8391a065ea79c54f3a.png"
-            alt
-          />
-        </div>
-        <div class="object p-4 mt-4 shadow-xl">
-          <div class="max-w-sm rounded">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">MariaDB</div>
-              <p
-                class="text-gray-700 text-base"
-              >Siempre que he trabajado con SQL he usado MariaDB y como SGBD HeidiSQL y MysqlWorkbench.</p>
-            </div>
-            <div class="px-6 py-4">
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >MariaDB</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >Mysql</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex-col items-center justify-center">
-        <div class="w-32 mx-auto cursor-pointer button text-white font-bold">
-          <img
-            class="w-32"
-            src="https://accentsconagua.com/img/images_9/full-text-search-in-mongodb_2.png"
-            alt
-          />
-        </div>
-        <div class="object p-4 mt-4 shadow-xl">
-          <div class="max-w-sm rounded">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">MongoDB</div>
-              <p
-                class="text-gray-700 text-base"
-              >He trabajado poco con no SQL pero si que me manejo bien en MongoDB.</p>
-            </div>
-            <div class="px-6 py-4">
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >MongoDB</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >NoSQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex-col items-center justify-center">
-        <div class="w-32 mx-auto cursor-pointer button text-white font-bold">
-          <img
-            class="w-32"
-            src="https://benjagarrido.com/wp-content/uploads/2015/07/java_logo.png"
-            alt
-          />
-        </div>
-        <div class="object p-4 mt-4 shadow-xl">
-          <div class="max-w-sm rounded">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">Java</div>
-              <p
-                class="text-gray-700 text-base"
-              >He usado tanto el Oracle JDK como el OpenJDK y tambien muchas de sus versiones.</p>
-            </div>
-            <div class="px-6 py-4">
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >OpenJDK</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >OracleJDK</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >JDK 8</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >JDK 9</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >JDK 11</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >JDK 12</span>
-              <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >JDK 13</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div>
 
     
     <div class="border-b-2 border-gray-400 ml-64 mr-64 flex justify-center text-gray-800">
-<p>Otras tecnologias usadas</p>
+      <p>{{this.data.add_info}}</p>
     </div>
 
 
@@ -249,6 +148,11 @@
 
 import ChartPrograming from "@/components/Chart-Programing";
 import ChartStyle from "@/components/Chart-Style";
+
+	import enStore from '@/store/enStore.js'
+	import esStore from '@/store/esStore.js'
+  import frStore from '@/store/frStore.js'
+  
 export default {
 name: "Knowledges",
 components: {
@@ -264,7 +168,9 @@ components: {
         width: "650px",
         height: "400px",
         position: "relative"
-      }
+      },
+      data: enStore.getters.knowledgePage
+      
     };
   },
   async created() {
@@ -293,7 +199,22 @@ components: {
     this.ProgramingTechnologies = data.ProgramingTechnologies;
     this.StyleTechnologies = data.StyleTechnologies;
     this.loaded = true;
-  }
+  },methods: {
+
+  },
+  mounted() {
+
+  let lang = localStorage.getItem('lang')	
+    if (lang === 'es') {
+			this.data = esStore.getters.knowledgePage;
+		}else if (lang === 'fr') {
+			this.data = frStore.getters.knowledgePage;
+		}
+		else if (lang === 'en') {
+			this.data = enStore.getters.knowledgePage;
+		}
+
+  },
 };
 </script>
    <style scope>

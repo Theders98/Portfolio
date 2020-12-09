@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import enStore from 'enStore'
-import esStore from 'esStore'
-import frStore from 'frStore'
+import enStore from './enStore'
+import esStore from './esStore'
+import frStore from './frStore'
 
 Vue.use(Vuex)
 

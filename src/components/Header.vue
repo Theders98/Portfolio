@@ -21,23 +21,24 @@
 
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
-				<li class="mr-3" v-for="(option, index) in enLang" v-bind:key="index">
+				<li class="mr-3">
                     <router-link to="/" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">
-					
+					{{this.data.firstOption}}
                     </router-link>
 				</li>
 				<li class="mr-3">
-                    <router-link to="/knowledges" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Conocimientos
+                    <router-link to="/knowledges" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">
+					{{this.data.secondOption}}
                     </router-link>
 				</li>
 				<li class="mr-3">
 					<router-link to="/history" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">
-					Historia
+					{{this.data.thirdOption}}
 					</router-link>
 				</li>
 				<li class="mr-3">
 					<router-link to="/contact" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">
-						Contacto
+						{{this.data.fourthOption}}
 					</router-link>
 					
 				</li>
@@ -77,25 +78,45 @@
 }
 </style>
 	<script>
+	import enStore from '@/store/enStore.js'
+	import esStore from '@/store/esStore.js'
+	import frStore from '@/store/frStore.js'
+
 export default {
-	data: function () { 
-		const lang = localStorage.getItem('lang') || 'en';
-		return {
-
-			lang: lang
-
-		};
+	data:  function(){ 
+	return{
+		lang : 'en',
+		data: enStore.getters.header
+	}
 	 },
   methods: {
     handleChange(event) {
+		window.location.reload()
 	  localStorage.setItem("lang", event);
-	  window.location.reload();
-    },
+	  		if (event === 'es') {
+			this.data = esStore.getters.header;
+		}else if (event === 'fr') {
+			this.data = frStore.getters.header;
+		}
+		else if (event === 'en') {
+			this.data = enStore.getters.header;
+		}
+	
+	
+	}
   },
-  computed: {
-	  enLang(){
-		  return this.$store.state.header;
-	  }
+  mounted() {
+
+  let lang = localStorage.getItem('lang')	
+    if (lang === 'es') {
+			this.data = esStore.getters.header;
+		}else if (lang === 'fr') {
+			this.data = frStore.getters.header;
+		}
+		else if (lang === 'en') {
+			this.data = enStore.getters.header;
+		}
+
   }
 };
 </script>

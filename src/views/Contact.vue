@@ -37,7 +37,7 @@
       <textarea class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" cols="40" rows="5" placeholder=". . ." aria-label="Name"></textarea>
     </div>
     <div class="mt-4">
-      <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Send</button>
+      <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded cursor-not-allowed" disabled type="submit">Send</button>
     </div>
   </form>
 </div>
