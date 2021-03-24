@@ -1,15 +1,46 @@
 <template>
   <div class="bg-gray-200">
-    <div class="flex mt-32 justify-around " id="dashboards">
+
+<div class="flex mt-32 justify-around">
+    <div class="mt-4 max-w-screen-lg bg-gray-700 rounded-lg mx-auto text-center py-12">
+        <h2 class="text-3xl leading-9 font-bold tracking-tight text-white sm:text-4xl sm:leading-10">
+            Check all certifications
+        </h2>
+        <div class="mt-8 flex justify-center">
+            <div class="inline-flex rounded-md bg-gray-600 shadow">
+                <a href="/certifications" class="text-white font-bold py-2 px-6">
+                    Go!
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="flex mt-16 justify-around " id="dashboards">
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-gray-400 border-b-2 border-gray-500 rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="font-bold uppercase text-gray-600">{{this.data.dashboards.programmingDashboard}}</h5>
+            <h5 class="font-bold uppercase text-gray-600">{{this.data.dashboards.frontDashboard}}</h5>
           </div>
           <div class="p-5 flex align-middle">
           <ChartPrograming v-if="loaded" :data="ProgramingTechnologies" :styles="styles"/>
           </div>
+          
+        </div>
+        <!--/Graph Card-->
+      </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+        <!--Graph Card-->
+        <div class="bg-white border-transparent rounded-lg shadow-lg">
+          <div class="bg-gray-300 border-b-2 border-gray-500 rounded-tl-lg rounded-tr-lg p-2">
+            <h5 class="font-bold uppercase text-gray-600">{{this.data.dashboards.backDashboard}}</h5>
+          </div>
+          <div class="p-5 flex align-middle bg-yellow-100">
+          <ChartBackend v-if="loaded" :data="BacknedTechnologies" :styles="styles"/>
+          </div>
+          
         </div>
         <!--/Graph Card-->
       </div>
@@ -148,6 +179,7 @@
 
 import ChartPrograming from "@/components/Chart-Programing";
 import ChartStyle from "@/components/Chart-Style";
+import ChartBackend from "@/components/Chart-Backend";
 
 	import enStore from '@/store/enStore.js'
 	import esStore from '@/store/esStore.js'
@@ -157,13 +189,15 @@ export default {
 name: "Knowledges",
 components: {
     ChartPrograming,
-    ChartStyle
+    ChartStyle,
+    ChartBackend
   },
   data() {
     return {
       loaded: false,
       ProgramingTechnologies: null,
       StyleTechnologies: null,
+      BacknedTechnologies: null,
       styles: {
         width: "650px",
         height: "400px",
@@ -180,14 +214,17 @@ components: {
     let data =           {
   
   "ProgramingTechnologies": {
-    "Vue": 20,
-    "Angular": 20,
-    "Jquery": 5,
-    "JavaScript": 10,
-    "Laravel": 15,
-    "Java": 30
+    "Vue": 30,
+    "Angular": 30,
+    "Jquery": 10,
+    "JavaScript": 20,
+    "Java": 10
   },
-    
+    "BacknedTechnologies": {
+    "Java": 30,
+    "Laravel": 30,
+    "Python": 40,
+  },
   "StyleTechnologies": {
     "Vuetify": 15,
     "SCSS": 30,
@@ -198,6 +235,7 @@ components: {
 }   
     this.ProgramingTechnologies = data.ProgramingTechnologies;
     this.StyleTechnologies = data.StyleTechnologies;
+    this.BacknedTechnologies = data.BacknedTechnologies;
     this.loaded = true;
   },methods: {
 

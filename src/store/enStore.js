@@ -18,7 +18,8 @@ export default new Vuex.Store({
       },
       "knowledgePage": {
         "dashboards": {
-          "programmingDashboard": " Used programming technologies (%)",
+          "frontDashboard": "Used frontend technologies (%)",
+          "backDashboard": "Used backend technologies (%) (Favourite)",
           "styleDashboard": "Used style technologies (%)"
         },
         "buttons": [

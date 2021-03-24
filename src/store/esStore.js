@@ -19,7 +19,8 @@ export default new Vuex.Store({
       "knowledgePage": {
 
         "dashboards": {
-          "programmingDashboard": "Tecnologias de programacion usadas (%)",
+          "frontDashboard": "Tecnologias de frontend usadas (%)",
+          "backDashboard": "Tecnologias backend usadas (%) (Favorito)",
           "styleDashboard": "Tecnologias de estilos usadas (%)"
         },
 

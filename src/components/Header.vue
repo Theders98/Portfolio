@@ -5,7 +5,7 @@
 
                     
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
-
+		
 			<router-link to="/">
 			<a class="text-white no-underline hover:text-white hover:no-underline flex" href="#">
 				<img class="w-16" src="@/assets/logo.png" alt=""><span class="text-2xl pl-2 mt-2"> David Portafolio</span>
@@ -66,10 +66,12 @@
 						  
 					</ul>
 				  </div>
+				  	<Experience></Experience>
 			</ul>
 		</div>
 	</nav>
     </div>
+	
 </template>
 
     <style scope>
@@ -82,13 +84,20 @@
 	import esStore from '@/store/esStore.js'
 	import frStore from '@/store/frStore.js'
 
+import Experience from '@/components/Experience-time'
+
 export default {
+components: {
+Experience
+	 },
 	data:  function(){ 
 	return{
 		lang : 'en',
-		data: enStore.getters.header
+		data: enStore.getters.header,
+		timer: "00:00",
 	}
 	 },
+
   methods: {
     handleChange(event) {
 		window.location.reload()
@@ -101,12 +110,10 @@ export default {
 		else if (event === 'en') {
 			this.data = enStore.getters.header;
 		}
-	
-	
-	}
+	},
+
   },
   mounted() {
-
   let lang = localStorage.getItem('lang')	
     if (lang === 'es') {
 			this.data = esStore.getters.header;
