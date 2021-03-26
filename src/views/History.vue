@@ -1,13 +1,18 @@
 <template>
     <div>
-        
+
 <div class="bg-gray-200 min-h-screen pt-40 pb-40">
-            
+<div class="flex justify-end mr-2">
+    <div class="fixed">
+    	<Experience></Experience>
+        </div>
+    </div>
+               
     <div class="min-h-screen flex justify-center">
         <div class="w-2/3 mx-auto">
             <div class="flex flex-row w-full">
     <!-- left col -->
-
+    	
     <div class="w-2/5 px-2 py-10">
         <div class="flex flex-col w-full rounded-lg shadow bg-white px-4 py-5">
             <div class="text-gray-600 mb-2 flex justify-between">
@@ -89,7 +94,7 @@
     <!--line column-->
     <div class="w-1/5  flex justify-center">
         <div class="relative flex h-full w-1 bg-green-300 items-center justify-center">
-            <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-10 bg-white font-thin">
+            <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-5 bg-white font-thin">
                  <div>09/2018</div>
                  <div>03/2020</div>
             </div>
@@ -104,7 +109,7 @@
      <!--line column-->
     <div class="w-1/5  flex justify-center">
         <div class="relative flex h-full w-1 bg-green-300 items-center justify-center">
-            <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-5 bg-white font-thin">
+            <div class="absolute flex flex-col justify-center h-24 w-24 rounded-full border-2 border-green-300 leading-none text-center z-1 bg-white font-thin">
                 <div>03/2020</div>
                 <div>Actually</div>
             </div>
@@ -138,8 +143,13 @@
 import enStore from "@/store/enStore.js";
 import esStore from "@/store/esStore.js";
 import frStore from "@/store/frStore.js";
+import Experience from '@/components/Experience-time'
+
 export default {
   name: "History",
+  components :{
+      Experience
+  },
   data() {
     return {
       data: enStore.getters.historyPage,

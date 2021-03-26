@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-200">
 
-<div class="flex mt-32 justify-around">
+<!-- <div class="flex mt-32 justify-around">
     <div class="mt-4 max-w-screen-lg bg-gray-700 rounded-lg mx-auto text-center py-12">
         <h2 class="text-3xl leading-9 font-bold tracking-tight text-white sm:text-4xl sm:leading-10">
             Check all certifications
@@ -14,10 +14,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
     
-    <div class="flex mt-16 justify-around " id="dashboards">
+    <div class="flex mt-32 justify-around flex-wrap" id="dashboards">
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="flex mt-32 justify-around" id="tecnologies">
+    <div class="flex mt-32 justify-around flex-wrap" id="tecnologies">
       <div v-for="(button, index) in this.data.buttons" v-bind:key="index" class="flex-col items-center justify-center">
         <div class="w-32 mx-auto cursor-pointer button text-white font-bold">
           <img class="w-32"

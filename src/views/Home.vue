@@ -1,7 +1,7 @@
 <template>
   <div class="home bg-gray-200">
     	<!--Container-->
-	<div class="container mx-auto pt-56 md:pt-18 ">
+	<div class="container mx-auto pt-48 md:pt-18 ">
 
 	<div class="font-sans leading-normal tracking-normal ">
 
@@ -10,7 +10,10 @@
 		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
 		<div class="carousel-item absolute opacity-0" style="height:50vh;">
 
-			<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">Slide 1</div>
+			<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">
+				<div class="absolute">Slide 1</div>
+				<img href="https://github.com/Theders98/Portfolio" src="@/assets/slider-portfolio.png" alt="" srcset="">
+			</div>
 		</div>
 		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold bg-white 
 		 hover:text-white rounded-full
@@ -66,9 +69,9 @@
 <div id="aboutMe" class="mt-32 pb-64">
 <p class="text-5xl text-center mb-8 font-semibold" id="aboutMeTitle">Sobre Mí</p> 
 
-<div class="ml-64 mr-64 flex " id="aboutMeText"><div class=" mr-32"><img class="mt-6" src="assets/logo.png" alt=""></div>
+<div class="lg:ml-32 lg:mr-32 sm:text-centerflex sm:m-8" id="aboutMeText"><div class=" mr-32"><img class="mt-6" src="assets/logo.png" alt=""></div>
 
-<div class="text-xl">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor odio ac augue fermentum malesuada. Suspendisse velit elit, blandit fringilla felis quis, aliquam egestas odio. Proin magna urna, tincidunt id orci a, gravida efficitur diam. Proin orci diam, pulvinar et dapibus eu, tempus vel lacus. Donec malesuada dictum lectus nec consequat. In egestas, nisi sed sagittis fermentum, augue urna ultricies magna, sit amet maximus augue mi rutrum elit. Maecenas scelerisque, nibh et suscipit cursus, mi lectus porttitor massa, ut consectetur leo velit a lorem. Vivamus vitae diam tristique, scelerisque libero quis, tempus mi. In nec mi ac purus cursus ultricies non ac eros. Nulla scelerisque, urna sit amet fringilla scelerisque, elit est aliquam tellus, nec condimentum tortor arcu vel eros. Donec porttitor risus eget tellus sagittis varius.
+<div class="text-xl text-justify">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor odio ac augue fermentum malesuada. Suspendisse velit elit, blandit fringilla felis quis, aliquam egestas odio. Proin magna urna, tincidunt id orci a, gravida efficitur diam. Proin orci diam, pulvinar et dapibus eu, tempus vel lacus. Donec malesuada dictum lectus nec consequat. In egestas, nisi sed sagittis fermentum, augue urna ultricies magna, sit amet maximus augue mi rutrum elit. Maecenas scelerisque, nibh et suscipit cursus, mi lectus porttitor massa, ut consectetur leo velit a lorem. Vivamus vitae diam tristique, scelerisque libero quis, tempus mi. In nec mi ac purus cursus ultricies non ac eros. Nulla scelerisque, urna sit amet fringilla scelerisque, elit est aliquam tellus, nec condimentum tortor arcu vel eros. Donec porttitor risus eget tellus sagittis varius.
 </div>
 </div>
 
@@ -116,7 +119,7 @@ export default {
 				left: 0;
 				right: 0;
 				text-align: center;
-				z-index: 10;
+				z-index: 5;
 			}
 			#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
 			#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,

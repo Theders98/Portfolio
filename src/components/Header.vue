@@ -8,7 +8,7 @@
 		
 			<router-link to="/">
 			<a class="text-white no-underline hover:text-white hover:no-underline flex" href="#">
-				<img class="w-16" src="@/assets/logo.png" alt=""><span class="text-2xl pl-2 mt-2"> David Portafolio</span>
+				<img class="w-16 rounded-lg" src="@/assets/logo.png" alt=""><span class="text-2xl pl-2 mt-2"> David Portafolio</span>
 			</a>
 			</router-link>
 		</div>
@@ -66,7 +66,7 @@
 						  
 					</ul>
 				  </div>
-				  	<Experience></Experience>
+				  
 			</ul>
 		</div>
 	</nav>
@@ -84,17 +84,14 @@
 	import esStore from '@/store/esStore.js'
 	import frStore from '@/store/frStore.js'
 
-import Experience from '@/components/Experience-time'
-
 export default {
 components: {
-Experience
+
 	 },
 	data:  function(){ 
 	return{
 		lang : 'en',
 		data: enStore.getters.header,
-		timer: "00:00",
 	}
 	 },
 
