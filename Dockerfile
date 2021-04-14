@@ -10,7 +10,7 @@ RUN npm run build
 FROM nginx:1.17
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./dist /etc/nginx/var/www/html/
+COPY ./dist /var/www/html/
 
 EXPOSE 8080:8080
 
