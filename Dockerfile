@@ -1,28 +1,33 @@
+# Create the container from the alpine linux image
+FROM alpine:3.7
 
-# stage1 as builder
-FROM node:10-alpine as builder
+# Add nginx and nodejs
+RUN apk add --update nginx nodejs
 
-WORKDIR /vue-ui
+# Create the directories we will need
+RUN mkdir -p /tmp/nginx/vue-single-page-app
+RUN mkdir -p /var/log/nginx
+RUN mkdir -p /var/www/html
 
-# Copy the package.json and install dependencies
-COPY package*.json ./
+# Copy the respective nginx configuration files
+COPY nginx_config/nginx.conf /etc/nginx/nginx.conf
+COPY nginx_config/default.conf /etc/nginx/conf.d/default.conf
+
+# Set the directory we want to run the next commands for
+WORKDIR /tmp/nginx/vue-single-page-app
+# Copy our source code into the container
+COPY . .
+# Install the dependencies, can be commented out if you're running the same node version
 RUN npm install
 
-# Copy rest of the files
-COPY . .
-
-# Build the project
+# run webpack and the vue-loader
 RUN npm run build
 
+# copy the built app to our served directory
+RUN cp -r dist/* /var/www/html
 
-FROM nginx:alpine as production-build
-COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+# make all files belong to the nginx user
+RUN chown nginx:nginx /var/www/html
 
-## Remove default nginx index page
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy from the stahg 1
-COPY --from=builder /vue-ui/dist /usr/share/nginx/html
-
-EXPOSE 80
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# start nginx and keep the process from backgrounding and the container from quitting
+CMD ["nginx", "-g", "daemon off;"]
